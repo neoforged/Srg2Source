@@ -15,10 +15,10 @@ plugins {
     id 'idea'
     id 'eclipse'
     id 'maven-publish'
-    id 'net.minecraftforge.gradleutils' version '2.+'
+    id 'net.neoforged.gradleutils' version '[2.0.18,)'
 }
 
-group = 'net.minecraftforge'
+group = 'net.neoforged'
 archivesBaseName = 'srg2source'
 version = gradleutils.getTagOffsetBranchVersion()
 println('Version: ' + version)
@@ -31,7 +31,7 @@ configurations {
 repositories {
     maven {
         name = "forge"
-        url = "https://maven.minecraftforge.net/"
+        url = "https://maven.neoforged.net/"
     }
     maven {
         name = "eclipse"
@@ -283,29 +283,29 @@ publishing {
                 artifact sourcesJar
                 name = 'Srg2Source'
                 description = 'Srg2Source library for ForgeGradle'
-                url = 'https://github.com/MinecraftForge/Srg2Source'
+                url = 'https://github.com/neoforged/Srg2Source'
                 scm {
-                    url = 'https://github.com/MinecraftForge/Srg2Source'
-                    connection = 'scm:git:git://github.com/MinecraftForge/Srg2Source.git'
-                    developerConnection = 'scm:git:git@github.com:MinecraftForge/Srg2Source.git'
+                    url = 'https://github.com/neoforged/Srg2Source'
+                    connection = 'scm:git:git://github.com/neoforged/Srg2Source.git'
+                    developerConnection = 'scm:git:git@github.com:neoforged/Srg2Source.git'
                 }
                 issueManagement {
                     system = 'github'
-                    url = 'https://github.com/MinecraftForge/Srg2Source/issues'
+                    url = 'https://github.com/neoforged/Srg2Source/issues'
                 }
 
                 licenses {
                     license {
                         name = 'LGPL 2.1'
-                        url = 'https://github.com/MinecraftForge/Srg2Source/blob/master/LICENSE'
+                        url = 'https://github.com/neoforged/Srg2Source/blob/master/LICENSE'
                         distribution = 'repo'
                     }
                 }
 
                 developers {
                     developer {
-                        id = 'LexManos'
-                        name = 'Lex Manos'
+                        id = 'neoforged'
+                        name = 'NeoForged'
                     }
                 }
             }
