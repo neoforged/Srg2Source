@@ -207,6 +207,14 @@ task shadowJar (type: Jar, dependsOn: patchJDT) {
     duplicatesStrategy = 'exclude'
     with jar
 
+    manifest {
+        attributes 'version': project.version
+        attributes 'javaCompliance': project.targetCompatibility
+        attributes 'group': project.group
+        attributes 'Main-Class': 'net.minecraftforge.srg2source.ConsoleTool'
+        attributes 'Implementation-Version': project.version
+    }
+
     from zipTree(patchJDT.output)
     from { configurations.implementation.collect { it.isDirectory() ? it : zipTree(it) } }
     exclude 'about_files/**'
