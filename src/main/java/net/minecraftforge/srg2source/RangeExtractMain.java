@@ -50,6 +50,8 @@ public class RangeExtractMain {
      */
 
     public static void main(String[] args) throws IOException {
+        System.err.println("Starting S2S version: " + RangeExtractMain.class.getPackage().getImplementationVersion());
+        
         OptionParser parser = new OptionParser();
         OptionSpec<File> libArg = parser.acceptsAll(Arrays.asList("e", "lib")).withRequiredArg().ofType(File.class);
         OptionSpec<Path> inputArg = parser.acceptsAll(Arrays.asList("in", "input")).withRequiredArg().withValuesConvertedBy(PATH_CONVERTER).required();

@@ -92,6 +92,7 @@ jar {
         attributes 'javaCompliance': project.targetCompatibility
         attributes 'group': project.group
         attributes 'Main-Class': 'net.minecraftforge.srg2source.ConsoleTool'
+        attributes 'Implementation-Version': project.version
     }
 }
 
