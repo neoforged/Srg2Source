@@ -786,5 +786,30 @@ public class SymbolReferenceWalker {
         @Override public boolean visit(WhileStatement                  node) { return true; }
         @Override public boolean visit(WildcardType                    node) { return true; }
         @Override public boolean visit(YieldStatement                  node) { return true; }
+        
+        @Override
+        public boolean visit(EnhancedForWithRecordPattern node) {
+            return true;
+        }
+        
+        @Override
+        public boolean visit(JavaDocRegion node) {
+            return true;
+        }
+        
+        @Override
+        public boolean visit(JavaDocTextElement node) {
+            return true;
+        }
+        
+        @Override
+        public boolean visit(RecordPattern node) {
+            return true;
+        }
+        
+        @Override
+        public boolean visit(TagProperty node) {
+            return true;
+        }
     };
 }
