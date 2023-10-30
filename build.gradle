@@ -16,7 +16,7 @@ plugins {
     id 'eclipse'
     id 'signing'
     id 'maven-publish'
-    id 'net.neoforged.gradleutils' version '[2.0.18,)'
+    id 'net.neoforged.gradleutils' version '2.+'
 }
 
 group = 'net.neoforged'
