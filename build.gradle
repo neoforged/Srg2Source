@@ -14,6 +14,7 @@ plugins {
     id 'java'
     id 'idea'
     id 'eclipse'
+    id 'signing'
     id 'maven-publish'
     id 'net.neoforged.gradleutils' version '[2.0.18,)'
 }
@@ -283,6 +284,8 @@ publishing {
                     developer {
                         id = 'neoforged'
                         name = 'NeoForged'
+                        email = 'contact@neoforged.net'
+                        url = 'https://github.com/NeoForged/'
                     }
                 }
             }
@@ -290,5 +293,14 @@ publishing {
     }
     repositories {
         maven gradleutils.getPublishingForgeMaven()
+    }
+}
+
+if (System.getenv('GPG_PRIVATE_KEY')) {
+    signing {
+        final signingKey = System.getenv('GPG_PRIVATE_KEY') ?: ''
+        final signingPassword = System.getenv('GPG_KEY_PASSWORD') ?: ''
+        useInMemoryPgpKeys(signingKey, signingPassword)
+        sign publishing.publications.mavenJava
     }
 }
